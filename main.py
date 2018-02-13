@@ -16,7 +16,6 @@ Destinado a todos interessados a utilizar a aplicação, em forma live e gratuit
 from import_csv import ImportCsv
 from xml_gpx import XmlGpx
 
-
 #iniciando automaticamente
 i1=ImportCsv()
 i2=XmlGpx()
