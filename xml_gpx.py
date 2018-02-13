@@ -15,9 +15,9 @@ import xml.etree.ElementTree as ET
 '''
 
 
-class Xml_gpx(ElementTree):
+class XmlGpx(ElementTree):
 
-    def inicia_rotina(self):
+    def inicia_rotina_xml(self):
 
         ET.register_namespace('','http://www.topografix.com/GPX/1/1')
         ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
