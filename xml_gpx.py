@@ -15,29 +15,29 @@ import xml.etree.ElementTree as ET
 '''
 
 
-
 class Xml_gpx(ElementTree):
 
+    def inicia_rotina(self):
 
-    def in_model(self):
-        tree = ET.parse('input_model.xml')
         ET.register_namespace('','http://www.topografix.com/GPX/1/1')
         ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
-        tree.write('favourites.gpx', encoding='UTF-8')
-        ET.dump(tree)
-ET.register_namespace('','http://www.topografix.com/GPX/1/1')
-ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
-tree = ET.parse('input_model.xml') #importa o xml e atribiu na árvore
-root = tree.getroot() # captura a tag gpx como o root
-lat='lat'
-lon='lon'
-wpt_atributos={'lat':lat,'lon':lon}
-wpt=ET.Element('wpt',wpt_atributos)
-name=ET.SubElement(wpt, 'name')
-category=ET.SubElement(wpt, 'category')
-root.append(wpt)
+        tree = ET.parse('input_model.xml') #importa o xml e atribiu na árvore
+        root = tree.getroot() # captura a tag gpx como o root
+        lat='lat'
+        lon='lon'
+        name_texto='texto name'
+        category_texto='texto category'
+        wpt_atributos={'lat':lat,'lon':lon}
+        wpt=ET.Element('wpt',wpt_atributos)
+        name=ET.SubElement(wpt, 'name')
+        category=ET.SubElement(wpt, 'category')
+        root.append(wpt)
+        ET.dump(root)
 
-ET.dump(root)
+
+
+
+
 
 
 #for elemento in tree.iter():
