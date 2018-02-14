@@ -16,9 +16,14 @@ Destinado a todos interessados a utilizar a aplicação, em forma live e gratuit
 from import_csv import ImportCsv
 from xml_gpx import XmlGpx
 
-#iniciando automaticamente
+
 i1=ImportCsv()
 i2=XmlGpx()
+i1.reseta_atributos()
 i1.inicia_rotina_csv()
-print(i1.lats_csv[:])
+
+print(i1.names_csv)
+# print(i1.categorys_csv)
+# print(i1.lats_csv)
+# print(i1.lons_csv)
 i2.inicia_rotina_xml()

@@ -21,11 +21,15 @@ class ImportCsv():
 
     def __init__(self):
 
+        self.names_csv=names_csv
+        self.categorys_csv=categorys_csv
+        self.lats_csv=lats_csv
+        self.lons_csv=lons_csv
         self.delimitador='|'
         self.delimitador_texto='"'
         self.spamreader=[[]]
         self.linha=[]
-        self.lats_csv=lats_csv
+
 
 
     def inicia_rotina_csv(self):
@@ -46,7 +50,7 @@ class ImportCsv():
 
 
     def reseta_atributos(self):
-        names_csv.clear()
-        categorys_csv.clear()
-        lats_csv.clear()
-        lons_csv.clear()
+        del names_csv[:]
+        del categorys_csv[:]
+        del lats_csv[:]
+        del lons_csv[:]
