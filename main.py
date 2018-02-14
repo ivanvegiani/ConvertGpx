@@ -19,6 +19,6 @@ from xml_gpx import XmlGpx
 #iniciando automaticamente
 i1=ImportCsv()
 i2=XmlGpx()
-
 i1.inicia_rotina_csv()
+print(i1.lats_csv[:])
 i2.inicia_rotina_xml()
