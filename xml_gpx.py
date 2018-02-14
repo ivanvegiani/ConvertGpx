@@ -1,7 +1,9 @@
 #coding: utf-8
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import Element
+from import_csv import ImportCsv
 import xml.etree.ElementTree as ET
+
 
 
 '''
@@ -17,7 +19,9 @@ import xml.etree.ElementTree as ET
 
 class XmlGpx(ElementTree):
 
-    def inicia_rotina_xml(self):
+
+
+    def __init__(self):
 
         ET.register_namespace('','http://www.topografix.com/GPX/1/1')
         ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
@@ -32,7 +36,22 @@ class XmlGpx(ElementTree):
         name=ET.SubElement(wpt, 'name')
         category=ET.SubElement(wpt, 'category')
         root.append(wpt)
-        ET.dump(root)
+        self.tree=tree
+        self.root=root
+        self.wpt_atributos=wpt_atributos
+        self.lat=lat
+        self.lon=lon
+        self.name_texto=name_texto
+        self.category_texto=category_texto
+
+
+
+
+
+
+
+
+
 
 
 
