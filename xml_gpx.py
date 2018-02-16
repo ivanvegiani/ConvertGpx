@@ -19,7 +19,25 @@ import xml.etree.ElementTree as ET
 
 class XmlGpx(ElementTree):
 
+    global tree
+    global root
+    global name_texto
+    global wpt_atributos
+    global category_texto
+    global lat
+    global lon
+    global lat1
+    global lon1
 
+    lat1='lat'
+    lon1='lon'
+    lat=['lat']
+    lon=['lon']
+    name_texto=['texto name']
+    category_texto=['texto category']
+    wpt_atributos=[{}]
+
+    #tree.write('favourites.gpx',encoding='UTF-8')
 
     def __init__(self):
 
@@ -27,43 +45,34 @@ class XmlGpx(ElementTree):
         ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
         tree = ET.parse('input_model.xml') #importa o xml e atribiu na árvore
         root = tree.getroot() # captura a tag gpx como o root
-        lat='lat'
-        lon='lon'
-        name_texto='texto name'
-        category_texto='texto category'
-        wpt_atributos={'lat':lat,'lon':lon}
-        wpt=ET.Element('wpt',wpt_atributos)
+        #wpt=ET.Element('wpt',wpt_atributos[0])
+        wpt=ET.Element('wpt')
         name=ET.SubElement(wpt, 'name')
         category=ET.SubElement(wpt, 'category')
         root.append(wpt)
+
         self.tree=tree
         self.root=root
         self.wpt_atributos=wpt_atributos
-        self.lat=lat
-        self.lon=lon
         self.name_texto=name_texto
         self.category_texto=category_texto
 
+    def __str__(self):
+        return "%s" % (self.wpt_atributos[0])
+
+    def get_wpt(self):
+        pass
+
+    def get_tree(self):
+        pass
+
+    def get_wpt_atributos(self):
+        self.wpt_atributos[0]={lat1:lat,lon1:lon}
+        return wpt_atributos
 
 
+    def get_name_texto(self):
+        pass
 
-
-
-
-
-
-
-
-
-
-
-
-
-#for elemento in tree.iter():
-#    print(elemento.tag)
-#    print(elemento.attrib)
-#print(ET.iselement(wpt))
-
-
-
-#tree.write('favourites.gpx', encoding='UTF-8')
+    def get_category_texto(self):
+        pass

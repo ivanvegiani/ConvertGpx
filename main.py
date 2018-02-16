@@ -26,5 +26,5 @@ i1.inicia_rotina_csv()
 # print(i1.categorys_csv)
 # print(i1.lats_csv)
 # print(i1.lons_csv)
-
 ET.dump(i2.tree)
+print(i2.get_wpt_atributos())
