@@ -16,7 +16,6 @@ import xml.etree.ElementTree as ET
 </gpx>
 '''
 
-
 class XmlGpx(ElementTree):
 
     global tree
@@ -28,12 +27,14 @@ class XmlGpx(ElementTree):
     global lon
     global lat1
     global lon1
+    global name_texto1
 
     lat1='lat'
     lon1='lon'
     lat=['lat']
     lon=['lon']
-    name_texto=['texto name']
+    name_texto1=''
+    name_texto=[name_texto1]
     category_texto=['texto category']
     wpt_atributos=[{}]
 
@@ -66,12 +67,19 @@ class XmlGpx(ElementTree):
     def get_tree(self):
         pass
 
-    def get_wpt_atributos(self):
-        self.wpt_atributos[0]={lat1:lat,lon1:lon}
-        return wpt_atributos
+    def set_wpt_atributos(self,lat,lon,i):
+        self.wpt_atributos[i]={lat1:lat,lon1:lon}
 
+    def get_wpt_atributos(self,i):
+        return wpt_atributos[i]
 
-    def get_name_texto(self):
+    def set_name_texto(self,name_texto1,i):
+        self.name_texto[i]=name_texto1
+
+    def get_name_texto(self,i):
+        return name_texto[i]
+
+    def set_category_texto(self):
         pass
 
     def get_category_texto(self):
