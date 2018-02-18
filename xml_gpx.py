@@ -40,7 +40,7 @@ class XmlGpx(ElementTree):
     category_texto=[category_texto1]
     wpt_atributos=[{}]
 
-    #tree.write('favourites.gpx',encoding='UTF-8')
+    # tree.write('favourites.gpx',encoding='UTF-8')
 
     def __init__(self):
 
@@ -48,12 +48,12 @@ class XmlGpx(ElementTree):
         ET.register_namespace("xsi",'http://www.w3.org/2001/XMLSchema-instance')
         tree = ET.parse('input_model.xml') #importa o xml e atribiu na árvore
         root = tree.getroot() # captura a tag gpx como o root
-        #wpt=ET.Element('wpt',wpt_atributos[0])
+        #wpt=ET.Element('wpt',wpt_atributos[0])S
         wpt=ET.Element('wpt')
         name=ET.SubElement(wpt, 'name')
         category=ET.SubElement(wpt, 'category')
         root.append(wpt)
-
+        self.wpt=wpt
         self.tree=tree
         self.root=root
         self.wpt_atributos=wpt_atributos
@@ -87,4 +87,3 @@ class XmlGpx(ElementTree):
 
     def get_category_texto(self,i):
         return self.category_texto[i]
-        

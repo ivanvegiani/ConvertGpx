@@ -18,8 +18,8 @@ class ImportCsv():
     global lats_lons_csv
     global lat2_csv
     global lon2_csv
-    lat2_csv=''
-    lon2_csv=''
+    lat2_csv=""
+    lon2_csv=""
     lats_lons_csv=[]
     global spamreader
 
@@ -42,6 +42,11 @@ class ImportCsv():
                 self.categorys_csv.append(rows[1])
                 self.lats_lons_csv.append({'lat':rows[2],'lon':rows[3]})
 
+    def __repr__ (self):
+        return "%s" (self.lats_lons_csv)
+
+    def __str__ (self):
+        return "%s" (self.lats_lons_csv)
 
     def reseta_atributos(self):
         del names_csv[:]
@@ -66,6 +71,3 @@ class ImportCsv():
 
     def get_categorys_csv(self):
         return self.categorys_csv
-
-
-#parei aqui
