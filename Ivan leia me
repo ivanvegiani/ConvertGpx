@@ -1,10 +1,7 @@
-implementar set names_csv
-implementar get names_csv
+
 implementar set category_csv
 implementar get category_csv
-declarar lats e lons como dicionário
-implementar set lats_lons_csv
-implementar get lats_lons_csv
 implementar metodos de adicionar atributos no wpt
 implementar metodos de adicionar texto em names
 implementar metodos de adicionar texto em category
+iniciar a primeira tela interface grafica (kivy) (em branco)
