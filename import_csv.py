@@ -5,7 +5,7 @@ path_input='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/input/modelo.csv
 class ImportCsv():
 
     """
-    modelo csv:
+    único modelo csv aceito:
     datum wgs84 formato graus decimais
     nome|categoria|latitude|longitude
     """
@@ -45,9 +45,6 @@ class ImportCsv():
             lats_csv.append(lat_csv)
             lons_csv.append(lon_csv)
         return lons_csv and lats_csv and categorys_csv and names_csv
-
-
-
 
     def reseta_atributos(self):
         del names_csv[:]

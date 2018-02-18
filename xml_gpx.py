@@ -28,6 +28,7 @@ class XmlGpx(ElementTree):
     global lat1
     global lon1
     global name_texto1
+    global category_texto1
 
     lat1='lat'
     lon1='lon'
@@ -35,7 +36,8 @@ class XmlGpx(ElementTree):
     lon=['lon']
     name_texto1=''
     name_texto=[name_texto1]
-    category_texto=['texto category']
+    category_texto1=''
+    category_texto=[category_texto1]
     wpt_atributos=[{}]
 
     #tree.write('favourites.gpx',encoding='UTF-8')
@@ -79,8 +81,10 @@ class XmlGpx(ElementTree):
     def get_name_texto(self,i):
         return name_texto[i]
 
-    def set_category_texto(self):
-        pass
+    def set_category_texto(self,category_texto1,i):
+        self.category_texto[i]=category_texto1
 
-    def get_category_texto(self):
-        pass
+
+    def get_category_texto(self,i):
+        return self.category_texto[i]
+        
