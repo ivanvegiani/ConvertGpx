@@ -21,7 +21,8 @@ class ImportCsv():
     lat2_csv=""
     lon2_csv=""
     lats_lons_csv=[]
-    global spamreader
+    global head
+    head=[]
 
 
     def __init__(self,path_input):
@@ -31,13 +32,17 @@ class ImportCsv():
         self.delimitador='|'
         self.delimitador_texto='"'
         self.spamreader=[[]]
-        self.linha=[]
         self.lats_lons_csv=lats_lons_csv
+
         #self.names_csv=['']
         csvfile=open(path_input)
         spamreader = csv.reader(csvfile, delimiter=self.delimitador, quotechar=self.delimitador_texto)
-
-        for rows in spamreader:
+        self.head=head
+        for rows0 in spamreader:
+            self.head.append(rows0[:])
+        csvfile2=open(path_input)
+        spamreader2 = csv.reader(csvfile2, delimiter=self.delimitador, quotechar=self.delimitador_texto)
+        for rows in spamreader2:
                 self.names_csv.append(rows[0])
                 self.categorys_csv.append(rows[1])
                 self.lats_lons_csv.append({'lat':rows[2],'lon':rows[3]})

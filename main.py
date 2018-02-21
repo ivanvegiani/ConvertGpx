@@ -17,9 +17,13 @@ from import_csv import ImportCsv
 # from xml_gpx import XmlGpx
 # xml_gps é um módulo utilizado para testes
 
+# para linux
 path_input='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/input/modelo.csv'
 path_output='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/output/favourites.gpx'
 
+# para windows
+# path_input='G:\Projetos\ConvertGpx\input\modelo.csv'
+# path_output='G:\Projetos\ConvertGpx\output\gavourites.gpx'
 #----------------------testes unitários ----------------------
 
 # instancias de testes t1 e t2
@@ -56,6 +60,16 @@ lats_lons_csv=[]
 names_csv=i1.get_names_csv()
 categorys_csv=i1.get_categorys_csv()
 lats_lons_csv=i1.get_lats_lons_csv()
+
+
+# conversão de sexagesimal para decimal:
+# graus decimais = graus + minutos/60 +segundos
+
+# print(i1.head[0])
+# print(len(i1.head[0]))
+# print(len(lats_lons_csv))
+# print(len(names_csv))
+
 # print(names_csv)
 # print(categorys_csv)
 # print(lats_lons_csv)
@@ -85,4 +99,5 @@ for rows in lats_lons_csv:
     root.append(wpt)
     i=i+1
 ET.dump(tree)
+print(len(i1.head[0]))
 tree.write(path_output,encoding='UTF-8')
