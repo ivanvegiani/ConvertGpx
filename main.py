@@ -17,12 +17,17 @@ from import_csv import ImportCsv
 # from xml_gpx import XmlGpx
 # xml_gps é um módulo utilizado para testes
 
+
 # para linux
-path_input='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/input/modelo.csv'
-path_output='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/output/favourites.gpx'
+# path_input='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/input/modelo.csv'
+#path_input='../input/input.csv'
+# path_output='/media/ivanvegiani/repositorios/Projetos/ConvertGpx/output/favourites.gpx'
+#path_output='../output/favourites.gpx'
+
 
 # para windows
-# path_input='G:\Projetos\ConvertGpx\input\modelo.csv'
+path_output='favourites.gpx'
+path_input='modelo.csv'
 # path_output='G:\Projetos\ConvertGpx\output\gavourites.gpx'
 #----------------------testes unitários ----------------------
 
