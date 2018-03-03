@@ -13,6 +13,7 @@ Código aberto e livre, cedido gratuitamente e voluntáriamente pelo autor.
 Destinado a todos interessados a utilizar a aplicação, em forma live e gratuita.
 """
 import xml.etree.ElementTree as ET
+import os
 from import_csv import ImportCsv
 # from xml_gpx import XmlGpx
 # xml_gps é um módulo utilizado para testes
@@ -104,5 +105,6 @@ for rows in lats_lons_csv:
     root.append(wpt)
     i=i+1
 ET.dump(tree)
+print(os.name)
 #print(len(i1.head[0]))
 tree.write(path_output,encoding='UTF-8')
