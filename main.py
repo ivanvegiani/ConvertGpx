@@ -26,8 +26,8 @@ from import_csv import ImportCsv
 
 
 # para windows
-path_output='favourites.gpx'
-path_input='modelo.csv'
+path_output='..\output\\favourites.gpx'
+path_input='..\input\input.csv'
 # path_output='G:\Projetos\ConvertGpx\output\gavourites.gpx'
 #----------------------testes unitários ----------------------
 
@@ -104,5 +104,5 @@ for rows in lats_lons_csv:
     root.append(wpt)
     i=i+1
 ET.dump(tree)
-print(len(i1.head[0]))
+#print(len(i1.head[0]))
 tree.write(path_output,encoding='UTF-8')
